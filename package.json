@@ -5,7 +5,7 @@
   "repository": "https://github.com/pixiumdigital/host-it.git",
   "author": "crimson-med <mederic.burlet@gmail.com>",
   "license": "GPL-3.0-only",
-  "private": true,
+  "private": false,
   "devDependencies": {
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
