@@ -30,10 +30,9 @@
   "types": "lib/HostIt.d.ts",
   "scripts": {
     "build": "tsc",
-    "prepare": "yarn build",
     "version": "git add -A src",
     "postversion": "git push && git push --tags",
-    "patch": "npm version patch && npm publish --access public",
+    "patch": "yarn build && npm version patch && npm publish --access public",
     "test1": "ts-node src/HostIt.ts",
     "test2": "ts-node src/Cli.ts --directory=\"test\"",
     "test3": "ts-node src/Cli.ts --directory=\"test\" --username=\"admin\" --password=\"root\""
