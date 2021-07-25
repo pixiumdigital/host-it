@@ -1,6 +1,6 @@
 {
   "name": "@pixium-digital/host-it",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Simply host a folder to a static express route",
   "repository": "https://github.com/pixiumdigital/host-it.git",
   "author": "crimson-med <mederic.burlet@gmail.com>",
