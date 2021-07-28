@@ -30,8 +30,6 @@
   "types": "lib/HostIt.d.ts",
   "scripts": {
     "build": "tsc",
-    "version": "git add -A src",
-    "postversion": "git push && git push --tags",
     "patch": "yarn build && npm version patch && npm publish --access public",
     "test1": "ts-node src/HostIt.ts",
     "test2": "ts-node src/Cli.ts --directory=\"test\"",
