@@ -28,7 +28,7 @@ export const HostIt = (configuration: HostItConfiguration) => {
             basicAuth({
                 users: userInfo,
                 challenge: true,
-                realm: "host-it"
+                realm: configuration.security.hostname
             })
         )
     }

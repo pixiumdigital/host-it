@@ -7,6 +7,7 @@ const argv = yargs(hideBin(process.argv)).options({
     directory: { type: 'string', demandOption: true },
     port: { type: 'number' },
     username: { type: 'string' },
+    hostname: { type: 'string' },
     password: { type: 'string' }
 }).parseSync();
 
@@ -22,12 +23,13 @@ if (argv.port) {
     configuration.port = argv.port
 }
 
-if ((argv.username && !argv.password) || (!argv.username && argv.password)) {
-    console.log(`You need to specify the username and password if you want to use basic auth`)
-} else if (argv.username && argv.password) {
+if (!argv.password || !argv.username || !argv.hostname) {
+    console.log(`You need to specify the username and password and hostname if you want to use basic auth`)
+} else if (argv.username && argv.password && argv.hostname) {
     configuration.security = {
         username: argv.username,
-        password: argv.password
+        password: argv.password,
+        hostname: argv.hostname
     }
 }
 HostIt(configuration as HostItConfiguration)

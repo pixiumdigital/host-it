@@ -30,9 +30,11 @@ You can run it as a command line with the following parameters:
 - `port`: **(optional, default 8080)**
     - The port you want the server to run on
 - `username`: **(optional)**
-    - If you use username you will need to use the password parameter. This will activate basic auth on the hosted content
+    - If you use username you will need to use the password and hostname parameter. This will activate basic auth on the hosted content
 - `password`: **(optional)**
-    - If you use password you will need to use the username parameter. This will activate basic auth on the hosted content
+    - If you use password you will need to use the username and hostname parameter. This will activate basic auth on the hosted content
+- `hostname`: **(optional)**
+    - If you use hostanem you will need to use the username and password parameter. This will activate basic auth on the hosted content
 
 You can also add a `host-it.json` file at the source of your project.
 
@@ -53,7 +55,8 @@ or
     "port": 5000,
     "security": {
         "username": "admin",
-        "password": "root"
+        "password": "root",
+        "hostname": "pixiumdigital.com"
     }
 }
 ```
