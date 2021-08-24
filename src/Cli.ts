@@ -6,6 +6,7 @@ import { HostItConfiguration } from './types';
 const argv = yargs(hideBin(process.argv)).options({
     directory: { type: 'string', demandOption: true },
     port: { type: 'number' },
+    isReact: { type: 'boolean', default: false },
     username: { type: 'string' },
     hostname: { type: 'string' },
     password: { type: 'string' }
@@ -21,6 +22,10 @@ if (argv.directory) {
 }
 if (argv.port) {
     configuration.port = argv.port
+}
+
+if (argv.isReact !== false) {
+    configuration.isReact = true
 }
 
 if (!argv.password || !argv.username || !argv.hostname) {

@@ -34,8 +34,12 @@ export const HostIt = (configuration: HostItConfiguration) => {
     }
     app.use(express.static(configuration.directory));
 
-    app.get('/*', (req: any, res: any) => res.sendFile(configuration.directory));
-    app.post('/*', (req: any, res: any) => res.sendFile(configuration.directory));
+    if (configuration.isReact) {
+        console.log(`Launching a React App`)
+        app.all('*', (req, res) => {
+            res.redirect('/index.html');
+        });
+    }
 
     app.listen(port, () => {
         console.log(`Server started on port ${port}`);
