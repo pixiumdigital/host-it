@@ -37,7 +37,7 @@ export const HostIt = (configuration: HostItConfiguration) => {
     if (configuration.isReact) {
         console.log(`Launching a React App`)
         app.all('*', (req, res) => {
-            res.redirect('/index.html');
+            res.redirect('/');
         });
     }
 
