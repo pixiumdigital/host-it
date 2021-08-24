@@ -34,7 +34,9 @@ You can run it as a command line with the following parameters:
 - `password`: **(optional)**
     - If you use password you will need to use the username and hostname parameter. This will activate basic auth on the hosted content
 - `hostname`: **(optional)**
-    - If you use hostanem you will need to use the username and password parameter. This will activate basic auth on the hosted content
+    - If you use hostname you will need to use the username and password parameter. This will activate basic auth on the hosted content
+- `isReact`: **(optional)**
+    - If your app is react we will redirect all to `index.html`
 
 You can also add a `host-it.json` file at the source of your project.
 
