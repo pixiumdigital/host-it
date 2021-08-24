@@ -39,7 +39,12 @@ export const HostIt = (configuration: HostItConfiguration) => {
         console.log(`Launching a React App`)
         app.all('*', (req, res) => {
             //res.redirect('/');
-            res.sendFile(path.join(process.cwd(), configuration.directory, '/index.html'), (err) => {
+            // Nice parse for dynamic / absolute urls
+            let targetPath = configuration.directory
+            if (!path.isAbsolute(targetPath)) {
+                targetPath = path.join(process.cwd(), configuration.directory)
+            }
+            res.sendFile(path.join(targetPath, '/index.html'), (err) => {
                 if (err) {
                     res.status(500).send(err)
                 }
