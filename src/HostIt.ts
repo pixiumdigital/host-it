@@ -1,6 +1,7 @@
 import { HostItConfiguration } from "./types";
 import * as express from 'express'
 import * as fs from 'fs'
+import * as path from 'path'
 import * as basicAuth from 'express-basic-auth'
 const app = express()
 
@@ -37,7 +38,12 @@ export const HostIt = (configuration: HostItConfiguration) => {
     if (configuration.isReact) {
         console.log(`Launching a React App`)
         app.all('*', (req, res) => {
-            res.redirect('/');
+            //res.redirect('/');
+            res.sendFile(path.join(process.cwd(), configuration.directory, '/index.html'), (err) => {
+                if (err) {
+                    res.status(500).send(err)
+                }
+            })
         });
     }
 

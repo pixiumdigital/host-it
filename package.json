@@ -33,6 +33,6 @@
     "patch": "yarn build && npm version patch && npm publish --access public",
     "test1": "ts-node src/HostIt.ts",
     "test2": "ts-node src/Cli.ts --directory=\"test\"",
-    "test3": "ts-node src/Cli.ts --directory=\"test\" --username=\"admin\" --password=\"root\" --isReact"
+    "test3": "ts-node src/Cli.ts --directory=\"test\" --username=\"admin\" --password=\"root\" --hostname=\"127.0.0.1\" --isReact"
   }
 }
