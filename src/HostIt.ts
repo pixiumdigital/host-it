@@ -37,6 +37,9 @@ export const HostIt = (configuration: HostItConfiguration) => {
 
     if (configuration.isReact) {
         console.log(`Launching a React App`)
+        if (path.isAbsolute(configuration.directory) && fs.existsSync(path.join(configuration.directory, 'images'))) {
+            app.use('/images', express.static(path.join(configuration.directory, 'images')))
+        }
         app.all('*', (req, res) => {
             //res.redirect('/');
             // Nice parse for dynamic / absolute urls
